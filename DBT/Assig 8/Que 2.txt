@@ -1,0 +1,29 @@
+Que  2) Write a query on the Customers table that will find the highest rating in each city. 
+Put the output in this form: 
+For the city (city), the highest rating is : (rating).
+
+mysql> select * from customers;
++-------+----------+----------+--------+------+
+| SCnum | Cname    | City     | Rating | Snum |
++-------+----------+----------+--------+------+
+|  2001 | Hoffman  | London   |    100 | 1001 |
+|  2002 | Giovanni | Rome     |    200 | 1003 |
+|  2003 | Liu      | San Jose |    200 | 1002 |
+|  2004 | Grass    | Berlin   |    300 | 1002 |
+|  2006 | Clemens  | London   |    100 | 1001 |
+|  2008 | Cisneros | San Jose |    300 | 1007 |
+|  2007 | Pereira  | Rome     |    100 | 1004 |
++-------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+mysql> select concat('For the city ',city, ',the highest rating is: ',max(rating))
+ as 'Formated output' from customers group by City;
++--------------------------------------------------+
+| Formated output                                  |
++--------------------------------------------------+
+| For the city London,the highest rating is: 100   |
+| For the city Rome,the highest rating is: 200     |
+| For the city San Jose,the highest rating is: 300 |
+| For the city Berlin,the highest rating is: 300   |
++--------------------------------------------------+
+4 rows in set (0.00 sec)

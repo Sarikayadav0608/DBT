@@ -1,0 +1,38 @@
+Que 1 & 4) 1. Create the table SEMP with the following structure:-      
+   EMPNO      CHAR(4)    
+   EMPNAME    CHAR(20)    
+   BASIC      FLOAT    
+   DEPTNO     CHAR(2)    
+   DEPTHEAD   CHAR(4)   
+
+4.Insert into the SEMP table the following values:-       
+0001, SUNIL, 6000, 10    
+0002, HIREN, 8000, 20    
+0003, ALI, 4000, 10, 0001    
+0004, GEORGE, 6000, 0002   
+ 
+mysql> create table semp(Empno char(4),Empname char(20),Basic float,Deptno char(2),Depthead char(4));
+Query OK, 0 rows affected (6.91 sec)
+
+mysql> insert into semp(Empno,Empname,Basic,Deptno) values('0001','SUNIL',6000,'10');
+Query OK, 1 row affected (0.72 sec)
+
+mysql> insert into semp(Empno,Empname,Basic,Deptno) values('0002','Hiren',8000,'20');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into semp values('0003','Ali',4000,'10','0001');
+Query OK, 1 row affected (0.25 sec)
+
+mysql> insert into semp(Empno,Empname,Basic,Depthead) values('0004','George',6000,'0002');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from semp;
++-------+---------+-------+--------+----------+
+| Empno | Empname | Basic | Deptno | Depthead |
++-------+---------+-------+--------+----------+
+| 0001  | SUNIL   |  6000 | 10     | NULL     |
+| 0002  | Hiren   |  8000 | 20     | NULL     |
+| 0003  | Ali     |  4000 | 10     | 0001     |
+| 0004  | George  |  6000 | NULL   | 0002     |
++-------+---------+-------+--------+----------+
+4 rows in set (0.25 sec)

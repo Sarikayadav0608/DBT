@@ -1,0 +1,27 @@
+Que 2 & 3) 2. Create the table SDEPT with the following structure:-    
+    
+   DEPTNO   CHAR(2)    
+   DEPTNAME  CHAR(15)    
+    
+3. Insert into the SDEPT table the following values:-    
+    
+10, Development    
+20, Training    
+ 
+mysql> create table sdept(Deptno char(2),Deptname char(15));
+Query OK, 0 rows affected (1.42 sec)
+
+mysql> insert into sdept values('10','Development');
+Query OK, 1 row affected (0.23 sec)
+
+mysql> insert into sdept values('20','Training');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from sdept;
++--------+-------------+
+| Deptno | Deptname    |
++--------+-------------+
+| 10     | Development |
+| 20     | Training    |
++--------+-------------+
+2 rows in set (0.00 sec)

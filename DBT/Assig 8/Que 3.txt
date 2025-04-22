@@ -1,0 +1,30 @@
+Que  3) Write a query that lists customers in descending order of rating. Output the rating 
+field first, followed by the customer’s name and number.
+
+mysql> select * from customers;
++-------+----------+----------+--------+------+
+| SCnum | Cname    | City     | Rating | Snum |
++-------+----------+----------+--------+------+
+|  2001 | Hoffman  | London   |    100 | 1001 |
+|  2002 | Giovanni | Rome     |    200 | 1003 |
+|  2003 | Liu      | San Jose |    200 | 1002 |
+|  2004 | Grass    | Berlin   |    300 | 1002 |
+|  2006 | Clemens  | London   |    100 | 1001 |
+|  2008 | Cisneros | San Jose |    300 | 1007 |
+|  2007 | Pereira  | Rome     |    100 | 1004 |
++-------+----------+----------+--------+------+
+7 rows in set (0.20 sec)
+
+mysql> select Rating,Cname,SCnum from customers order by rating desc;
++--------+----------+-------+
+| Rating | Cname    | SCnum |
++--------+----------+-------+
+|    300 | Grass    |  2004 |
+|    300 | Cisneros |  2008 |
+|    200 | Giovanni |  2002 |
+|    200 | Liu      |  2003 |
+|    100 | Hoffman  |  2001 |
+|    100 | Clemens  |  2006 |
+|    100 | Pereira  |  2007 |
++--------+----------+-------+
+7 rows in set (0.00 sec)

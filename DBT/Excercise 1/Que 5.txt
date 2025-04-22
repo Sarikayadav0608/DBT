@@ -1,0 +1,63 @@
+Create S, P, J, SPJ tables as specified below and insert a few rows in each table:-     
+   SUPPLIER                
+(S#, Sname, Status, City) - S    
+   PARTS                   
+(P#, Pname, Color, Weight, City) - P    
+   PROJECTS                
+(J#, Jname, City) - J    
+   SUPPLIER-PARTS-PROJECT     
+(S#, P#, J#, Qty)- SPJ    
+Sample data for S# column:- ‘S1’, ‘S2’, ‘S3’, etc.    
+Sample data for P# column:- ‘P1’, ‘P2’, ‘P3’, etc.    
+Sample data for J# column:- ‘J1’, ‘J2’, ‘J3’, etc.    
+Sample data for Status column:- 10, 20, 30, etc.    
+    
+Write the SELECT queries to do the following:-    
+    
+Que 5. Display all the data from the S table.    
+   
+mysql> INSERT INTO S VALUES ('S1', 'Supplier1', 20, 'London');
+Query OK, 1 row affected (5.55 sec)
+
+mysql> INSERT INTO S VALUES ('S2', 'Supplier2', 10, 'Paris');
+Query OK, 1 row affected (0.25 sec)
+
+mysql> INSERT INTO S VALUES ('S3', 'Supplier3', 30, 'Athens');
+Query OK, 1 row affected (0.38 sec)
+
+mysql> INSERT INTO P VALUES ('P1', 'Bolt', 'Red', 13.0, 'London');
+Query OK, 1 row affected (0.96 sec)
+
+mysql> INSERT INTO P VALUES ('P2', 'Nut', 'Blue', 15.0, 'Paris');
+Query OK, 1 row affected (0.35 sec)
+
+mysql> INSERT INTO P VALUES ('P3', 'Screw', 'Green', 12.5, 'Athens');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> INSERT INTO J VALUES ('J1', 'Project1', 'London');
+Query OK, 1 row affected (0.30 sec)
+
+mysql> INSERT INTO J VALUES ('J2', 'Project2', 'Athens');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO J VALUES ('J3', 'Project3', 'Paris');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO SPJ VALUES ('S1', 'P1', 'J1', 100);
+Query OK, 1 row affected (0.26 sec)
+
+mysql> INSERT INTO SPJ VALUES ('S2', 'P2', 'J3', 200);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO SPJ VALUES ('S3', 'P3', 'J2', 150);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from s;
++------+-----------+--------+--------+
+| S#   | Sname     | Status | City   |
++------+-----------+--------+--------+
+| S1   | Supplier1 |     20 | London |
+| S2   | Supplier2 |     10 | Paris  |
+| S3   | Supplier3 |     30 | Athens |
++------+-----------+--------+--------+
+3 rows in set (0.14 sec)

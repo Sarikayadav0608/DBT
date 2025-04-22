@@ -1,0 +1,41 @@
+/* Que 2. Create the following tables with the given structures and insert sample
+data as specified: - 
+B) CUSTOMERS
+ Cnum int(4)
+ Cname varchar(10)
+ City varchar(10)
+ Rating int(4)
+ Snum int(4) */
+
+mysql> create table CUSTOMERS(SCnum int(4),Cname varchar(10),City varchar(10),
+        Rating int(4),Snum int(4));
+Query OK, 0 rows affected, 2 warnings (2.54 sec)
+
+mysql> select * from customers;
+Empty set (0.37 sec)
+
+mysql> insert into customers values(2001,'Hoffman','London',100,1001);
+Query OK, 1 row affected (2.45 sec)
+
+mysql> insert into customers values(2002,'Giovanni','Rome',200,1003),
+    -> (2003,'Liu','San Jose',200,1002),
+    -> (2004,'Grass','Berlin',300,1002),
+    -> (2006,'Clemens','London',100,1001),
+    -> (2008,'Cisneros','San Jose',300,1007),
+    -> (2007,'Pereira','Rome',100,1004);
+Query OK, 6 rows affected (0.24 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.03 sec)

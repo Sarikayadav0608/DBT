@@ -1,0 +1,61 @@
+/* Que 1. Create the following tables with the given structures and insert sample
+data as specified: - 
+A) SALESPEOPLE
+Snum int(4)
+Sname varchar(10)
+City varchar(10)
+Comm float(3,2) */
+
+mysql> create database sarika;
+ERROR 1007 (HY000): Can't create database 'sarika'; database exists
+mysql> drop sarika;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sarika' at line 1
+mysql> drop database sarika;
+Query OK, 1 row affected (6.18 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| classwork          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.81 sec)
+
+mysql> create database sarika;
+Query OK, 1 row affected (0.25 sec)
+
+mysql> use sarika;
+Database changed
+mysql> create table SALESPEOPLE;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table SALESPEOPLE(Snum int(4),Sname varchar(10),City varchar(10),Comm float(3,2));
+Query OK, 0 rows affected, 2 warnings (2.54 sec)
+
+mysql> select * from SALESPEOPLE;
+Empty set (0.15 sec)
+
+mysql> insert into SALESPEOPLE values(1001,'Peel','London',.12),
+    -> (1002,'Serres','San Jose',.13),
+    -> (1004,'Motika','London',.11),
+    -> (1007,'Rifkin','Barcelona',.15),
+    -> (1003,'Axelrod','New York',.10);
+Query OK, 5 rows affected (0.35 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from SALESPEOPLE;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.04 sec)
